@@ -12,10 +12,34 @@
   "activationEvents": [ "onStartupFinished" ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "motifications.helloWorld",
-      "title": "Hello World"
-    }]
+    "configuration": {
+      "title": "Motifications",
+      "properties": {
+        "motifications.messages": {
+          "title": "Messages",
+          "type": "string",
+          "editPresentation": "multilineText",
+          "default": "Test message 1\nMessage 2\nLast message 3",
+          "markdownDescription": "Specify the messages that will be displayed in the notifications"
+        },
+        "motifications.interval.unit": {
+          "type": "string",
+          "default": "Minutes",
+          "enum": ["Seconds", "Minutes", "Hours", "Days"],
+          "enumDescriptions": [
+            "Notifications will display every x second(s)",
+            "Notifications will display every x minute(s)",
+            "Notifications will display every x hour(s)",
+            "Notifications will display every x day(s)"
+          ]
+        },
+        "motifications.interval.value": {
+          "type": "number",
+          "default": 30,
+          "markdownDescription": "The interval number for the unit specified"
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
