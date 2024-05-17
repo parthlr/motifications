@@ -20,6 +20,8 @@ function activate(context) {
 	var intervalTimer;
 	var lastSelectedMessage = '';
 
+	let firstRun = true;
+
 	const getIntervalMultiplier = function(intervalUnit) {
 		let intervalMultiplier = SECONDS_MULTIPLIER;
 
@@ -68,7 +70,16 @@ function activate(context) {
 		let message = getRandomMessage(motificationsConfig, lastSelectedMessage);
 		lastSelectedMessage = message;
 
-		vscode.window.showInformationMessage(message);
+		if (!firstRun) {
+			vscode.window.showInformationMessage(message, "Change Settings")
+			.then(selection => {
+				if (selection === "Change Settings") {
+					vscode.commands.executeCommand('workbench.action.openSettings', 'motifications');
+				}
+			});
+		}
+
+		firstRun = false;
 
 		clearInterval(intervalTimer);
 		intervalTimer = setInterval(showMessages, intervalValue * intervalMultiplier);

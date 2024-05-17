@@ -19,7 +19,7 @@
           "title": "Messages",
           "type": "string",
           "editPresentation": "multilineText",
-          "default": "Test message 1\nMessage 2\nLast message 3",
+          "default": "You'll fix that bug in no time\nYou're doing great!\nIf you haven't already, you should take a break",
           "markdownDescription": "Specify the messages that will be displayed in the notifications"
         },
         "motifications.interval.unit": {
