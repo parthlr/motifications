@@ -67,6 +67,11 @@ function activate(context) {
 
 		let intervalMultiplier = getIntervalMultiplier(intervalUnit);
 
+		const currentDate = new Date();
+
+		const customTimesFlag = motificationsConfig.get('messages.custom');
+		const customTimesString = motificationsConfig.get('messages.custom.times');
+
 		let message = getRandomMessage(motificationsConfig, lastSelectedMessage);
 		lastSelectedMessage = message;
 
@@ -86,6 +91,15 @@ function activate(context) {
 	 };
 
 	 showMessages();
+
+	 vscode.workspace.onDidChangeConfiguration(event => {
+        let settingsChanged = event.affectsConfiguration("motifications");
+        if (settingsChanged) {
+            firstRun = true;
+
+			showMessages();
+        }
+    })
 }
 
 // This method is called when your extension is deactivated

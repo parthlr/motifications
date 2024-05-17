@@ -20,7 +20,7 @@
           "type": "string",
           "editPresentation": "multilineText",
           "default": "You'll fix that bug in no time\nYou're doing great!\nIf you haven't already, you should take a break",
-          "markdownDescription": "Specify the messages that will be displayed in the notifications"
+          "markdownDescription": "Specify the messages that will be displayed in the notifications. Separate each message with a new line."
         },
         "motifications.interval.unit": {
           "type": "string",
@@ -36,7 +36,18 @@
         "motifications.interval.value": {
           "type": "number",
           "default": 30,
-          "markdownDescription": "The interval number for the unit specified"
+          "markdownDescription": "The interval number for the unit specified."
+        },
+        "motifications.messages.custom": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Use custom times when messages will appear during the day instead of set intervals."
+        },
+        "motifications.messages.custom.times": {
+          "type": "string",
+          "default": "",
+          "editPresentation": "multilineText",
+          "markdownDescription": "The list of times that messages should appear at. Separate each time with a new line."
         }
       }
     }
