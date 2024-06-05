@@ -76,12 +76,24 @@ function activate(context) {
 		lastSelectedMessage = message;
 
 		if (!firstRun) {
-			vscode.window.showInformationMessage(message, "Change Settings")
-			.then(selection => {
-				if (selection === "Change Settings") {
-					vscode.commands.executeCommand('workbench.action.openSettings', 'motifications');
-				}
-			});
+			if (message.includes("🐞")) {
+				vscode.window.showInformationMessage(message, "Squash", "Change Settings")
+				.then(selection => {
+					if (selection === "Squash") {
+						vscode.window.showInformationMessage("Bug squashed!")
+					}
+					else if (selection === "Change Settings") {
+						vscode.commands.executeCommand('workbench.action.openSettings', 'motifications');
+					}
+				});
+			} else {
+				vscode.window.showInformationMessage(message, "Change Settings")
+				.then(selection => {
+					if (selection === "Change Settings") {
+						vscode.commands.executeCommand('workbench.action.openSettings', 'motifications');
+					}
+				});
+			}
 		}
 
 		firstRun = false;
