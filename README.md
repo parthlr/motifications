@@ -1,65 +1,27 @@
-# motifications README
+# Motifications
 
-This is the README for your extension "motifications". After writing up a brief description, we recommend including the following sections.
+Motifications = Motivating + Notifications
+
+Extension for occasionally sending motivating notification messages at configured intervals to you.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* Display motivating messages at set intervals
+* Change the interval that messages are displayed depending on how frequent you want them
+* Configure what messages are displayed - add/remove messages or configure a custom list
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+This extension has the following settings that can be used to configure the notifications' properties:
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* `motifications.messages`: Specify the messages that will be displayed in the notifications. Each message is distinguished by a new line.
+* `motifications.interval.unit`: The time unit of the interval - `Seconds`, `Minutes`, `Hours`, `Days`
+* `motifications.interval.value`: The amount of time for the specified unit
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Initial release of extension
 
 **Enjoy!**
