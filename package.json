@@ -1,8 +1,9 @@
 {
   "name": "motifications",
   "displayName": "Motifications",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Extension for occasionally sending motivating notification messages at configured intervals",
+  "publisher": "parthlr",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.89.0"
   },
@@ -31,7 +32,8 @@
             "Notifications will display every x minute(s)",
             "Notifications will display every x hour(s)",
             "Notifications will display every x day(s)"
-          ]
+          ],
+          "markdownDescription": "The time unit for the notification interval."
         },
         "motifications.interval.value": {
           "type": "number",
